@@ -1,18 +1,52 @@
 {% extends "base.html" %}
 {% block title %}Города{% endblock title%}
 {% block content %}
-    <h1 class="display-4">Города</h1>
+    <h1 class="display-4 text-center my-2">Города</h1>
     <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-10 mx-auto my-2">
+            <table class="table table-striped">
             {% for object in objects_list%}
-                <p> {{ object.name }} </p>
-            {%endfor%}
+                <tr>
+                    <td>
+                        <a href="{% url 'city:detail' pk=object.pk %}">
+                            {{ object.name }}
+                        </a>
+                    </td>
+                    <td>
+                        <a href="{% url 'city:update' pk=object.pk %}">
+                            <button type="button" class="btn btn-primary btn-sm">
+                                Редактировать
+                            </button>
+                        </a>
+                    </td>
+                    <td>
+                        <a href="{% url 'city:delete' pk=object.pk %}">
+                            <button type="button" class="btn btn-danger btn-sm">
+                                Удалить
+                            </button>
+                        </a>
+                    </td>
+                </tr>
+            {% endfor %}
+            </table>
+            <nav aria-label="Page navigation example">
+                <ul class="pagination">
+                    <li class="page-item"><a class="page-link" href="#">Назад</a></li>
+                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item"><a class="page-link" href="#">Вперед</a></li>
+                </ul>
+            </nav>
         </div>
     </div>
-
-    <form action="" method="post">{% csrf_token %}
-        {{ form.as_p }}
-        <br>
-        <input type="submit" value="Сохранить">
-    </form>
+    <div class="row">
+        <div class="col-md-6 mx-auto">
+            <a href="{% url 'city:add' %}">
+                 <button type="button" class="btn btn-primary btn-sm">
+                      Добавить новый город
+                 </button>
+            </a>
+        </div>
+    </div>
 {% endblock content%}
