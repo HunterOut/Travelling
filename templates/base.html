@@ -1,5 +1,5 @@
 {% url 'city:home' as city_home_url %}
-<!doctype html>
+<!Doctype html>
 <html lang="en">
 
   <head>
@@ -25,13 +25,20 @@
       <div class="collapse navbar-collapse" id="navbarNavDropdown">
         <ul class="navbar-nav ml-auto">
             <li class="nav-item {% if request.path == city_home_url%} active {%endif%}">
-                <a class="nav-link" href="{% url 'city:home'%}">Города<span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="{% url 'city:home'%}">
+                    Города
+                    <span class="sr-only">(current)</span>
+                </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Features</a>
+                <a class="nav-link" href="#">
+                    Features
+                </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Pricing</a>
+                <a class="nav-link" href="#">
+                    Pricing
+                </a>
             </li>
 
             <li class="nav-item dropdown">
@@ -55,17 +62,41 @@
         </ul>
       </div>
         <div class="nav-item">
-          <a class="btn btn-outline-light" href="#">Sign up</a>
+            <a class="btn btn-outline-light" href="#">
+                Sign up
+            </a>
         </div>
     </nav>
+  </div>
+  <div class="container my-4">
+      <div class="row">
+          <div class="col-md-8 mx-auto">
+              {% if messages %}
+              {% for message in messages %}
+                  {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}
+                      <div class="alert alert-danger messages">
+                          <span {% if messages.tags %} class="{{ message.tags }}" {% endif %}>
+                              Внимание {{ message }}<br/>
+                          </span>
+                      </div>
+                  {% else %}
+                      <div class="alert alert-success messages">
+                          <span {% if messages.tags %} class="{{ message.tags }}" {% endif %}>
+                              {{ message }}<br/>
+                          </span>
+                      </div>
+                  {% endif %}
+              {% endfor %}
+              {% endif %}
+          </div>
+      </div>
   </div>
 
 
 
-
-    <div class="container">
-        {% block content %}{% endblock content%}
-    </div>
+  <div class="container">
+      {% block content %}{% endblock content%}
+  </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
