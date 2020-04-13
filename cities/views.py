@@ -8,6 +8,7 @@ from django.contrib import messages
 from .models import City
 from .forms import CityForm
 
+
 def home(request):
     cities = City.objects.all()
     paginator = Paginator(cities, 6)
