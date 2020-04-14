@@ -20,10 +20,12 @@ class Train(models.Model):
         qs = Train.objects.filter(from_city=self.from_city,
                                   to_city=self.to_city,
                                   travel_time=self.travel_time).exclude(pk=self.pk)
-        if qs.exists:
+        if qs.exists():
             raise ValidationError('Измените время в пути!')
-        return super(Train, self).clean(*args, **kwargs)
 
+    def save(self, *args, **kwargs):
+        self.clean()
+        super().save(*args, **kwargs)
 
     def __str__(self):
         return f'Поезд № {self.name} из {self.from_city} в {self.to_city}'
