@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block title %}Поиск маршрута{% endblock title%}
+{% block content %}
+    <h1 class="display-4 text-center my-2">Поиск маршрута</h1>
+    <div class="row">
+        <div class="col-md-10 mx-auto my-2">
+            <form action="" method="post">{% csrf_token %}
+                {{ form.as_p }}
+                <input type="submit" value="Найти">
+            </form>
+        </div>
+    </div>
+{% endblock content%}
