@@ -1,7 +1,7 @@
 {% extends "base.html" %}
-{% block title %}Маршруты{% endblock title%}
+{% block title %}Маршрут{% endblock title%}
 {% block content %}
-    <h1 class="display-4 text-center my-2">Маршруты</h1>
+    <h1 class="display-4 text-center my-2">Маршрут</h1>
     <div class="row">
         <div class="col-md-10 mx-auto my-2">
             <table class="table table-striped">
@@ -15,11 +15,10 @@
                         <th>&nbsp;</th>
                     </tr>
                 </thead>
-                {% for object in objects_list%}
 
                     <tr>
                         <td>
-                        <a href="{% url 'train:detail' pk=object.pk %}">
+                        <a href="{% url 'detail' pk=object.pk %}">
                             {{ object.name }}
                         </a>
                         </td>
@@ -32,9 +31,14 @@
                         <td>
                             {{ object.travel_times }}
                         </td>
-
+                        <td>
+                        <a href="{% url 'delete' pk=object.pk %}">
+                            <button type="button" class="btn btn-danger btn-sm">
+                                Удалить
+                            </button>
+                        </a>
+                        </td>
                     </tr>
-                {% endfor %}
             </table>
         </div>
     </div>
