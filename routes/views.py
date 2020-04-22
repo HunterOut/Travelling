@@ -32,7 +32,7 @@ def get_graph():
 
 
 def home(request):
-    form = RouteForm
+    form = RouteForm()
     return render(request, 'routes/home.html', {'form': form})
 
 
@@ -104,7 +104,7 @@ def find_routes(request):
         return render(request, 'routes/home.html', {'form': form})
     else:
         messages.error(request, 'Создайте маршрут')
-        form = RouteForm
+        form = RouteForm()
         return render(request, 'routes/home.html', {'form': form})
 
 
@@ -123,7 +123,7 @@ def add_route(request):
             route = Route(name=name, from_city=from_city, to_city=to_city, travel_times=travel_times)
             route.save()
             for tr in qs:
-                route.accross_cities.add(tr.id)
+                route.across_cities.add(tr.id)
             messages.success(request, 'Маршрут был успешно сохранен.')
             return redirect('/')
     else:
