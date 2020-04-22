@@ -169,7 +169,7 @@ class RouteListView(ListView):
 
 
 class RouteDeleteView(DeleteView):
-    model = City
+    model = Route
     success_url = reverse_lazy('home')
 
     def get(self, request, *args, **kwargs):
