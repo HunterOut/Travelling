@@ -11,7 +11,7 @@
                         <th>Откуда</th>
                         <th>Куда</th>
                         <th>Время в пути</th>
-                        <th>&nbsp;</th>
+                        <th>Список поездов по маршруту</th>
                         <th>&nbsp;</th>
                     </tr>
                 </thead>
@@ -30,6 +30,11 @@
                         </td>
                         <td>
                             {{ object.travel_times }}
+                        </td>
+                        <td>
+                            {% for tr in object.across_cities.all %}
+                                {{ tr }}<br/>
+                            {% endfor %}
                         </td>
                         <td>
                         <a href="{% url 'delete' pk=object.pk %}">
