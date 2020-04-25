@@ -1,0 +1,230 @@
+[
+{
+    "model": "cities.city",
+    "pk": 3,
+    "fields": {
+        "name": "\u041e\u0434\u0435\u0441\u0441\u0430"
+    }
+},
+{
+    "model": "cities.city",
+    "pk": 5,
+    "fields": {
+        "name": "\u041a\u0440\u043e\u043f\u0438\u0432\u043d\u0438\u0446\u043a\u0438\u0439"
+    }
+},
+{
+    "model": "cities.city",
+    "pk": 6,
+    "fields": {
+        "name": "\u0414\u043d\u0435\u043f\u0440\u043e\u043f\u0435\u0442\u0440\u043e\u0432\u0441\u043a"
+    }
+},
+{
+    "model": "cities.city",
+    "pk": 7,
+    "fields": {
+        "name": "\u0412\u0438\u043d\u043d\u0438\u0446\u0430"
+    }
+},
+{
+    "model": "cities.city",
+    "pk": 8,
+    "fields": {
+        "name": "\u041d\u0438\u043a\u043e\u043b\u0430\u0435\u0432"
+    }
+},
+{
+    "model": "cities.city",
+    "pk": 9,
+    "fields": {
+        "name": "\u041b\u044c\u0432\u043e\u0432"
+    }
+},
+{
+    "model": "cities.city",
+    "pk": 10,
+    "fields": {
+        "name": "\u0416\u0438\u0442\u043e\u043c\u0438\u0440"
+    }
+},
+{
+    "model": "cities.city",
+    "pk": 11,
+    "fields": {
+        "name": "\u041c\u0430\u0440\u0438\u0443\u043f\u043e\u043b\u044c"
+    }
+},
+{
+    "model": "cities.city",
+    "pk": 13,
+    "fields": {
+        "name": "\u0428\u043e\u0441\u0442\u043a\u0430"
+    }
+},
+{
+    "model": "cities.city",
+    "pk": 14,
+    "fields": {
+        "name": "\u041a\u0440\u0435\u043c\u0435\u043d\u0447\u0443\u0433"
+    }
+},
+{
+    "model": "cities.city",
+    "pk": 15,
+    "fields": {
+        "name": "\u0425\u0435\u0440\u0441\u043e\u043d"
+    }
+},
+{
+    "model": "cities.city",
+    "pk": 16,
+    "fields": {
+        "name": "\u0417\u0430\u043f\u043e\u0440\u043e\u0436\u044c\u0435"
+    }
+},
+{
+    "model": "cities.city",
+    "pk": 17,
+    "fields": {
+        "name": "\u0427\u0435\u0440\u043d\u0438\u0433\u043e\u0432"
+    }
+},
+{
+    "model": "cities.city",
+    "pk": 18,
+    "fields": {
+        "name": "\u041a\u0438\u0435\u0432"
+    }
+},
+{
+    "model": "cities.city",
+    "pk": 19,
+    "fields": {
+        "name": "\u0425\u0430\u0440\u044c\u043a\u043e\u0432"
+    }
+},
+{
+    "model": "cities.city",
+    "pk": 20,
+    "fields": {
+        "name": "\u0427\u0435\u0440\u043d\u043e\u0432\u0446\u044b"
+    }
+},
+{
+    "model": "trains.train",
+    "pk": 7,
+    "fields": {
+        "name": "132\u0428",
+        "from_city": 7,
+        "to_city": 10,
+        "travel_time": 3
+    }
+},
+{
+    "model": "trains.train",
+    "pk": 10,
+    "fields": {
+        "name": "776\u041a\u041f",
+        "from_city": 18,
+        "to_city": 19,
+        "travel_time": 9
+    }
+},
+{
+    "model": "trains.train",
+    "pk": 11,
+    "fields": {
+        "name": "765\u041a",
+        "from_city": 15,
+        "to_city": 19,
+        "travel_time": 17
+    }
+},
+{
+    "model": "trains.train",
+    "pk": 12,
+    "fields": {
+        "name": "104\u0414",
+        "from_city": 11,
+        "to_city": 18,
+        "travel_time": 7
+    }
+},
+{
+    "model": "trains.train",
+    "pk": 13,
+    "fields": {
+        "name": "242\u0428",
+        "from_city": 3,
+        "to_city": 6,
+        "travel_time": 10
+    }
+},
+{
+    "model": "trains.train",
+    "pk": 14,
+    "fields": {
+        "name": "112\u041b",
+        "from_city": 7,
+        "to_city": 19,
+        "travel_time": 12
+    }
+},
+{
+    "model": "trains.train",
+    "pk": 15,
+    "fields": {
+        "name": "142\u0414",
+        "from_city": 16,
+        "to_city": 3,
+        "travel_time": 13
+    }
+},
+{
+    "model": "trains.train",
+    "pk": 16,
+    "fields": {
+        "name": "065\u041c",
+        "from_city": 18,
+        "to_city": 7,
+        "travel_time": 3
+    }
+},
+{
+    "model": "trains.train",
+    "pk": 17,
+    "fields": {
+        "name": "007\u0414",
+        "from_city": 18,
+        "to_city": 20,
+        "travel_time": 12
+    }
+},
+{
+    "model": "routes.route",
+    "pk": 4,
+    "fields": {
+        "name": "\u0422\u0435\u0441\u0442\u043e\u0432\u044b\u0439",
+        "from_city": "\u041a\u0438\u0435\u0432",
+        "to_city": "\u0425\u0430\u0440\u044c\u043a\u043e\u0432",
+        "travel_times": 9,
+        "across_cities": [
+            10
+        ]
+    }
+},
+{
+    "model": "routes.route",
+    "pk": 17,
+    "fields": {
+        "name": "99",
+        "from_city": "\u0412\u0438\u043d\u043d\u0438\u0446\u0430",
+        "to_city": "\u0425\u0430\u0440\u044c\u043a\u043e\u0432",
+        "travel_times": 12,
+        "across_cities": [
+            14
+        ]
+    }
+}
+]
