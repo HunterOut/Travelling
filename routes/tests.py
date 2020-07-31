@@ -1,5 +1,8 @@
 from django.core.exceptions import ValidationError
 from django.test import TestCase
+from django.urls import reverse
+from routes import views as routes_views
+from cities import views as cities_views
 from cities.models import City
 from trains.models import Train
 
@@ -49,3 +52,21 @@ class RoutesTestCase(TestCase):
             train.full_clean()
         except ValidationError as e:
             self.assertEqual({'__all__': ['Измените время в пути!']}, e.message_dict)
+
+    def test_home_routes_view(self):
+        response = self.client.get(reverse('home'))
+        self.assertEqual(200, response.status_code)
+        self.assertTemplateUsed(response, template_name='routes/home.html')
+        self.assertEqual(routes_views.home, response.resolver_match.func)
+
+    def test_cbv_city_detail(self):
+        response = self.client.get(reverse('city:detail', kwargs={'pk': self.city_A.id}))
+        self.assertEqual(200, response.status_code)
+        self.assertTemplateUsed(response, template_name='cities/detail.html')
+        self.assertEqual(cities_views.CityDetailView.as_view().__name__, response.resolver_match.func.__name__)
+
+    def test_find_all_routes(self):
+        graph = routes_views.get_graph()
+        all_ways = list(routes_views.dfs_paths(graph, self.city_A.id, self.city_E.id))
+        self.assertEqual(len(all_ways), 4)
+        
