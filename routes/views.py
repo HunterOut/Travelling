@@ -77,7 +77,7 @@ def find_routes(request):
                 if total_time <= travelling_time:
                     trains.append(tmp)
             if not trains:
-                messages.error(request, 'Время в пути больше заданного')
+                messages.error(request, 'Время в пути, больше заданного')
                 return render(request, 'routes/home.html', {'form': form})
             routes = []
             cities = {'from_city': from_city.name, 'to_city': to_city.name}
